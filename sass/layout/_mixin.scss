@@ -1,0 +1,160 @@
+
+@mixin body{
+  font-size: 12px;
+  color: #666;
+}
+@mixin box-size{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@mixin rounded($radius: 20px) {
+　　　　-moz-border-top-left-radius: $radius;
+　　　　-webkit-border-top-left-radius: $radius;
+　　　　-o-border-top-left-radius: $radius;
+        border-top-left-radius: $radius;
+}
+@mixin pie-clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  @include has-layout;
+}
+
+@mixin mobile-title{
+  line-height: 42px;
+  color: #43B999;
+  font: {
+    size: 20px;
+    family: "Microsoft YaHei";
+  }
+  margin-bottom: 10px;
+}
+
+@mixin same-box{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+
+@mixin sport-title{
+  float: left;
+  line-height: 42px;
+  color: #333333;
+  font: {
+    size: 24px;
+    family: "Microsoft YaHei";
+  }
+  padding-right: 5px;
+}
+
+
+@mixin title-red{
+  float: left;
+  color: #ee1616;
+  font:{
+    size: 10px;
+    family: "Microsoft YaHei";
+  }
+  padding-top: 10px;
+  line-height: 13px;
+  span{
+    display: block;
+  }
+}
+
+@mixin food-title{
+  .food-title{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    font-family:"Microsoft YaHei";
+    margin-bottom: 10px;
+    h3{
+      float: left;
+      font:{
+        size: 20px;
+      }
+      color: #FF7200;
+      padding-right: 10px;
+    }
+    span{
+      display: inline-block;
+      float: left;
+      font-size: 12px;
+      color: #999;
+      line-height: 28px;
+    }
+  }
+}
+
+@mixin global-title{
+  line-height: 42px;
+  color: #FF7200;
+  font:{
+    size: 20px;
+    family: "Microsoft YaHei";
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,487 @@
+@import "../layout/mobile_sidebar","../layout/variables", "../layout/mixin";
+
+//今日热门部分样式开始
+.today-popular{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  margin-top: 66px;
+  .today-title{
+    @include mobile-title;
+  }
+  .tab-area{
+    width: 100%;
+    height: 337px;
+    overflow: hidden;
+
+    .popular-tab{
+      width: 100%;
+      height: 39px;
+      border-top: 1px solid #1e856a;
+      background-color: #f1f3f2;
+      overflow: hidden;
+      .popular-tab-title{
+        float: left;
+        width: 275px;
+        text-align: center;
+        line-height: 39px;
+        font:{
+          size: 18px;
+          family: $main-sec-ff;
+        }
+        cursor: pointer;
+        &.current{
+          background-color: #43b999;
+          a{
+            color: #fff;
+          }
+        }
+        a{
+          color: #43B999;
+        }
+      }
+    }
+    .tab_content{
+
+      .popular-detail{
+        height: 295px;
+        overflow: hidden;
+        border: {
+          left: 1px;
+          bottom: 1px;
+          right: 1px;
+          style: solid;
+          color: #ededed;
+        }
+        display: none;
+        li{
+          float: left;
+          width: 218px;
+          height: 295px;
+          cursor: pointer;
+          &.popular-detail-list{
+            border-left:1px solid #ededed;
+          }
+          .popular-detail-pic{
+            display: block;
+            margin: 30px auto 10px;
+            width: 170px;
+            height: 135px;
+
+          }
+          .popular-detail-text{
+            width: 206px;
+            margin: 0 auto;
+            line-height: 20px;
+            color: #666;
+            span{
+              display: block;
+
+              &.money-red{
+                padding: 15px 0 7px;
+                color: red;
+                font:{
+                  size: 16px;
+                  weight: bold;
+                  family: $main-sec-ff;
+                }
+              }
+            }
+          }
+          .now-buy{
+            width: 218px;
+            height: 40px;
+            background-color: #e6233f;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+            display: none;
+            a{
+              color: #fff;
+              font:{
+                size: 14px;
+                family: $main-sec-ff;
+              }
+            }
+          }
+          .buy-last{
+            width: 222px;
+          }
+        }
+      }
+      .tab_item{
+        display: block;
+      }
+    }
+
+  }
+
+}
+//今日热门部分样式结束
+
+//主题购部分样式开始
+.theme-purchase{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin-top: 60px;
+
+  .theme-title{
+    @include mobile-title;
+  }
+
+  .mobile-theme{
+    width: 100%;
+    height: 369px;
+    border-top:1px solid #208468;
+    li{
+      float: left;
+      a{
+        display: block;
+
+        &.theme-pic01{
+          width: 220px;
+        }
+        &.theme-pic02{
+          height: 183px;
+          width: 330px;
+        }
+      }
+    }
+  }
+}
+//主题购部分样式结束
+
+//品牌旗舰店部分样式开始
+.mobile-brand-store {
+  @include same-box;
+  margin-top: 50px;
+  .store-title {
+    @include mobile-title;
+  }
+  .mobile-brand-goods{
+    @include same-box;
+    .mobile-brand-same{
+      height: 385px;
+      border: 1px solid #ececec;
+      float: left;
+      overflow: hidden;
+      .mobile-brand-pic{
+        float: left;
+        .brand-computers{
+          width: 238px;
+          border-bottom:1px solid #ececec;
+          &:last-child{
+            border-bottom: 0;
+          }
+          a{
+            width: 115px;
+            height: 76px;
+            display: inline-block;
+            border: {
+              right: 1px;
+              style: solid;
+              color: #ececec;
+            }
+          }
+        }
+      }
+      
+      .mobile-brand-r{
+        float: left;
+        .computer-pic{
+          width: 340px;
+          height: 365px;
+          display: block;
+        }
+        .computer-pic02{
+          width: 270px;
+          display: block;
+          padding-top: 20px;
+        }
+      }
+    }
+
+    .brand-same-right{
+      float: right;
+    }
+  }
+}
+//品牌旗舰店部分样式结束
+
+//手机配件样式开始
+.mobile-accessories{
+  @include same-box;
+  margin-top: 50px;
+  .mobile-accessories-title{
+  @include mobile-title;
+  }
+  .accessories-same{
+    @include same-box;
+    border-top:1px solid #208468;
+    .banners-left{
+      position: relative;
+      height: 432px;
+      width: 251px;
+      float: left;
+      overflow: hidden;
+      .slide{
+        position: absolute;
+        width: 400%;
+        left: 0;
+        top: 0;
+        li{
+          display: block;
+          float: left;
+          }
+        }
+
+      .circle{
+        position: absolute;
+        left: 50%;
+        bottom: 5px;
+        margin-left: -27px;
+        li{
+          width: 12px;
+          height: 14px;
+          display: inline-block;
+          padding-right: 2px;
+          background-color: rgba(0,0,0,.1);
+          border-radius: 50%;
+          cursor: pointer;
+          &.current{
+            background-color: rgba(0,0,0,.1);
+          }
+          &.current-two{
+            background-color: rgba(0,0,0,.3);
+          }
+          &.current-three{
+            background-color: rgba(0,0,0,.5);
+          }
+        }
+      }
+    }
+    .accessories-right{
+      float: left;
+      z-index: 1000;
+      .accessories-picture{
+        width: 100%;
+        height: 215px;
+        border-bottom:1px solid #ececec;
+        .accessories-right-report{
+          width: 211px;
+          height: 215px;
+          border-right:1px solid #ececec;
+          float: left;
+          .mobile-picture{
+            display: block;
+            width: 130px;
+            height: 110px;
+            margin: 0 auto;
+            padding-top: 20px;
+          }
+          p{
+            color: #666;
+            text-align: center;
+            line-height: 24px;
+            padding-top: 20px;
+          }
+          .mobile-money{
+            padding-left: 10px;
+            color: #DD1919;
+            font:{
+              size: 16px;
+              family: $main-sec-ff;
+            }
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+}
+//手机配件样式结束
+
+//电脑配件电脑整机办公室用具样式开始
+.computer-accessories{
+  @include same-box;
+  margin-top: 50px;
+  .computer-accessories-title{
+    @include mobile-title;
+  }
+  .computer-accessories-pic{
+    border-top:1px solid #208468;
+    height: 540px;
+    li{
+      float: left;
+      &.computer-accessories-list{
+        position: relative;
+        width: 239px;
+        height: 540px;
+        .hot-activity{
+          position: absolute;
+          left: 8%;
+          bottom:4%;
+          color: #fff;
+          font:{
+            size: 15px;
+            family: $main-sec-ff;
+          }
+          h4{
+            width: 240px;
+            line-height: 26px;
+          }
+          .hot-activity-text{
+            margin-top: 25px;
+            p{
+              line-height: 22px;
+              .circle{
+                width: 2px;
+                height:2px;
+                display: inline-block;
+                background-color: #fff;
+                vertical-align: 5px;
+              }
+              a{
+                color: #fff;
+                &:hover{
+                  color: #32b4ff;
+                }
+              }
+            }
+          }
+
+        }
+        .computer-accessories-dashed{
+          width: 240px;
+          display: block;
+          position: absolute;
+          left: 0;
+          bottom: 18%;
+          border-bottom:1px dashed #fff;
+          margin-bottom: 10px;
+        }
+      }
+      &.computer-accessories-pic02{
+        width: 645px;
+        border-right:1px solid #ececec;
+        .computer-accessories-pic-top{
+          height: 270px;
+          border-bottom:1px solid #ececec;
+          a{
+            display: inline-block;
+            &:first-child{
+              width: 426px;
+            }
+            &:last-child{
+              width: 210px;
+              border-left:1px solid #ececec;
+            }
+          }
+
+        }
+        .computer-accessories-pic-bottoom{
+          height: 269px;
+          border-bottom:1px solid #ececec;
+          a{
+            display: inline-block;
+            width: 209px;
+            &:nth-child(2){
+              border-left:1px solid #ececec;
+            }
+            &:last-child{
+              border-left:1px solid #ececec;
+            }
+          }
+        }
+      }
+      &.popularity-ranking{
+        width: 213px;
+        height: 540px;
+        border: {
+          right: 1px;
+          bottom: 1px;
+          style: solid;
+          color: #ececec;
+        }
+        .ranking-title{
+          height: 39px;
+          text-align: center;
+          line-height: 39px;
+          border-bottom:1px solid #ececec;
+          h4{
+            font:{
+              size: 14px;
+              family: $main-sec-ff;
+            }
+            color: #333;
+          }
+        }
+
+        .popularity-ranking-show{
+           li{
+             height: 93px;
+             width: 213px;
+             border-bottom:1px dashed #ececec;
+             overflow: hidden;
+             padding-top: 5px;
+             &:last-child{
+               border-bottom: 0;
+             }
+             .ranking-pic{
+               width: 90px;
+               height: 92px;
+               float: left;
+               margin: {
+                 left: 8px;
+                 right: 15px;
+               }
+             }
+             .ranking-text{
+               float: left;
+               margin-top: 10px;
+               line-height: 20px;
+               @include body;
+               span{
+                 display: block;
+
+                 &.ranking-money{
+                   line-height: 28px;
+                   color: #D40808;
+                   font:{
+                     size: 14px;
+                     family: $main-sec-ff;
+                   }
+                 }
+               }
+             }
+           }
+        }
+      }
+    }
+  }
+}
+//电脑配件电脑整机办公室用具样式结束
+
+
+//service
+.service{
+  background-color: #fafafa;
+  border-top:1px solid #e6e6e6;
+  margin-top: 70px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

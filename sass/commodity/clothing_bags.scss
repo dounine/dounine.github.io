@@ -1,0 +1,513 @@
+
+@import "../layout/clothing_sidebar","../layout/variables", "../layout/mixin";
+
+#content{
+  background-color: #f6f6f6;
+}
+
+//特色主题开始
+.featured-clothing{
+  @include same-box;
+  margin-top: 35px;
+  .clothing-themes{
+    overflow: hidden;
+
+    .featured-themes{
+      line-height: 40px;
+      color:#ffb340;
+      font:{
+        family:$main-sec-ff;
+        size:20px;
+      }
+    }
+    .themes-img{
+      $height:345px;
+      height: $height;
+      border: {
+        top:1px;
+        style:solid;
+        color:#ffb340;
+      }
+      overflow: hidden;
+      li{
+        height: $height;
+        float: left;
+        &:nth-child(3){
+          width: 174px;
+        }
+        a{
+          display: block;
+        }
+      }
+    }
+  }
+}
+//特色主题结束
+
+//国际品牌与原创品牌开始
+  .brand{
+    width: 100%;
+    height: auto;
+    margin: {
+      top:45px;
+      bottom: 20px;
+    }
+    .brand-tab{
+      li{
+        width: 128px;
+        height: 45px;
+        line-height: 45px;
+        display: inline-block;
+        &.current{
+          background-color: #ff8f18;
+          a{
+            color: #fff;
+          }
+        }
+        a{
+          @extend li;
+          text-align: center;
+          color: #fe8f19;
+          font:{
+            size:20px;
+            family: $main-sec-ff;
+          }
+
+        }
+      }
+
+    }
+    .tab-brand{
+
+      .brand-pic{
+        height: 350px;
+        border: {
+          top:1px;
+          style: solid;
+          color: #fe8f19;
+        }
+        overflow: hidden;
+        display: none;
+        li{
+          position: relative;
+          float: left;
+          .brand-li01{
+            width: 183px;
+            height: 350px;
+            display: block;
+          }
+          .brand-text{
+            position: absolute;
+            bottom: 0;
+            width: 170px;
+            height: 47px;
+            background: rgba(255,255,255,0.5);
+            padding:{
+              top: 10px;
+              left: 12px;
+            }
+            cursor: pointer;
+            span{
+              display: block;
+              font-family: $main-sec-ff;
+
+              &.brand-sale{
+                color: #333;
+                font-size: 18px;
+              }
+              &.brand-member{
+                color: #df0000;
+                line-height: 20px;
+              }
+            }
+          }
+        }
+      }
+      .tab-item{
+        display: block;
+      }
+    }
+  }
+
+//international brand
+.nation-brand{
+  width: 100%;
+  height: auto;
+  margin-bottom: 55px;
+  .brand-bg{
+    background-color: #fff;
+    .brand-img{
+      display: inline-block;
+      width: 132px;
+      height: 54px;
+      background-color: #fff;
+      img{
+        display: inline-block;
+      }
+    }
+  }
+}
+
+
+//国际品牌与原创品牌结束
+
+//独家新品部分开始
+.exclusive-new{
+  width: 100%;
+  height:auto;
+  margin-bottom: 50px;
+  .exclusive-products{
+
+    .products-title{
+      color:#ff8a08;
+      font:{
+        family: $main-sec-ff;
+        size: 20px;
+      }
+      line-height: 40px;
+    }
+
+    .exclusive-picture{
+      width: 100%;
+      overflow: hidden;
+      li{
+        float: left;
+
+        &:first-child{
+          width: 916px;
+        }
+        .exclusive-top{
+          display: inline-block;
+          .top-pic01{
+            width: 360px;
+            @extend .exclusive-top;
+          }
+          .top-pic{
+            width: 179px;
+            @extend .exclusive-top;
+          }
+
+        }
+        .exclusive-bottom{
+          background-color: #fff;
+
+          .bottom-pic{
+            display: inline-block;
+            width: 178px;
+            height: 167px;
+          }
+        }
+
+        .exclusive-right{
+          display:inline-block;
+          width: 184px;
+        }
+      }
+    }
+  }
+}
+//独家新品部分结束
+
+//女装男装鞋子包包部分公共样式开始
+.shop-same{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    .same-content{
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      .same-title{
+        color:#ff8a08;
+        font:{
+          family: $main-sec-ff;
+          size: 20px;
+        }
+        line-height: 38px;
+      }
+      .same-show{
+        width: 100%;
+        border: {
+          top: 1px;
+          style: solid;
+          color: #ff8a08;
+        }
+        .women-left{
+          width: 316px;
+        }
+        .man-left{
+          width: 328px;
+        }
+        .same-show-time{
+          float: left;
+          .same-list{
+            width: 331px;
+            .same-menu-box{
+              height: 207px;
+              font-family: $main-sec-ff;
+              background-color: #fff;
+              overflow: hidden;
+              .same-menu{
+                width: 145px;
+                float: left;
+                padding:{
+                  top:10px;
+                  left:20px;
+                }
+                span{
+                  line-height: 26px;
+                  font-size: 20px;
+                  color: #333;
+                }
+                p{
+                  line-height: 22px;
+                  a{
+                    display: inline-block;
+                    width: 66px;
+                    &:hover{
+                      @extend .red-color;
+                    }
+                  }
+                  @at-root .red-color{
+                    color: red;
+                  }
+                }
+              }
+            }
+
+          }
+          //women right picture start
+          .women-show-top{
+            width: 100%;
+            height: 413px;
+            .pic-right{
+              border-right:1px solid #ececec;
+            }
+            p{
+              float: left;
+              &.women-pict{
+                width: 188px;
+              }
+              &.women-pic02{
+                width: 202px;
+              }
+
+              a{
+                display: block;
+
+                &.women-bottom{
+                  height: 206px;
+                  border-bottom:1px solid #ececec;
+                }
+              }
+            }
+
+          }
+          .women-show-bottom{
+            width: 100%;
+            height: 205px;
+            border-top:1px solid #ececec;
+            background: #fff;
+            a{
+              display:inline-block;
+
+              &.bottom-pic{
+                width: 180px;
+              }
+              &.bottom-pic02{
+                width: 199px;
+              }
+              &.bottom-pic03{
+                width: 380px;
+                background-color: #fff;
+                border-left:1px solid #ececec;
+              }
+            }
+
+          }
+          //women right picture end
+
+          //man right picture start
+          .man-border{
+            border-right:1px solid #ececec;
+          }
+          .man-show-lis{
+            float: left;
+            height: 620px;
+            a{
+              display: block;
+            }
+            .man-toppic{
+              height: auto;
+              .man-underb{
+                border-bottom:1px solid #ececec;
+              }
+              .man-samel{
+                float: left;
+              }
+              .man-picr01{
+                border:{
+                  right: 1px;
+                  bottom: 1px;
+                  style: solid;
+                  color: #ececec;
+                }
+              }
+              .man-picr02{
+                display: block;
+                img{
+                  display: block;
+                  border-bottom:1px solid #ececec;
+                }
+              }
+            }
+          }
+          //man right picture end
+
+          //shoes right picture start
+
+            .shoe-pic{
+              height: 206px;
+              .shoe-pic01{
+                display: inline-block;
+                width: 378px;
+                height: 206px;
+              }
+              .shoe-pic02{
+                display: inline-block;
+                width: 182px;
+                height: 206px;
+                border-left:1px solid #ececec;
+              }
+
+              .shoe-pic-bottom{
+                float: left;
+                border-top:1px solid #ececec;
+                .shoe-wram{
+                  display: block;
+                  width: 186px;
+                  height: 207px;
+                  border: {
+                    right: 1px;
+                    style: solid;
+                    color: #ececec;
+                  }
+                }
+                .shoe-bd{
+                  border-left:1px solid #ececec;
+                  &:first-child{
+                    border-bottom:1px solid #ececec;
+                  }
+                }
+                .shoe-women{
+                  width: 197px;
+                  display: block;
+
+                }
+
+              }
+            }
+
+
+          //shoes right picture end
+
+          //Trends luggage start
+          .bags-pic{
+
+            &:first-child{
+              height: 415px;
+            }
+            .bags-top{
+              float: left;
+              .bags-pic01{
+                display: block;
+
+                height: 206px;
+                border-right:1px solid #ececec;
+                &:last-child{
+                  border-top:1px solid #ececec;
+                  width: 200px;
+                }
+
+              }
+              .bags-pic02{
+                display: inline-block;
+                width: 182px;
+                &:last-child{
+                  border-left:1px solid #ececec;
+                }
+              }
+              .bags-pic03{
+                 display:block;
+
+               }
+            }
+            a{
+              display: inline-block;
+              &.bags-pic04{
+              width: 384px;
+            }
+              &.bags-pic05{
+                width: 180px;
+                &:last-child{
+                  border-left:1px solid #ececec;
+                }
+              }
+            }
+
+
+          }
+          .bags-hei{
+            height: 206px;
+            border-top:1px solid #ececec;
+          }
+          //Trends luggage end
+        }
+      }
+    }
+}
+.same-brand{
+  width: 100%;
+  height: auto;
+  margin-bottom: 55px;
+
+  .same-bg{
+    background-color: #fff;
+    border-top:1px solid #ececec;
+    .same-img{
+      display: inline-block;
+      width: 152px;
+      height:60px;
+      img{
+        vertical-align: middle;
+        display: inline-block;
+        text-align: center;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+//女装男装鞋子包包部分内容公共样式结束
+
+.service{
+  background-color: #fafafa;
+  border-top:1px solid #e6e6e6;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

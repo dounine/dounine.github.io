@@ -1,0 +1,617 @@
+@import "../layout/variables", "../layout/mixin";
+#coll-head{
+  background:#33b6ff;
+  margin-bottom:30px;
+  margin-top:0;
+  .header-lg{
+    width:210px;
+    height:80px;
+    .logo{
+      margin:18px 0;
+      background:url("/images/orders/logo.png") no-repeat;
+    }
+  }
+  .myshop{
+    float:left;
+    color:#fff;
+    width:80px;
+    text-align:center;
+    padding:15px 0;
+    line-height:25px;
+    a{
+      color:#fff;
+      display:inline-block;
+      width:100%;
+      height:17px;
+      line-height:17px;
+      border:1px solid #fff;
+      border-radius:10px;
+
+    }
+  }
+  .topnav{
+    li{
+      float:left;
+      margin:0 40px;
+      height:80px;
+      line-height:80px;
+      a{
+        font-size:16px;
+        color:#fff;
+      }
+    }
+  }
+  .search-wrap{
+    margin:24px 0 0 85px;
+    height:32px;
+    input{
+      width:144px;
+      height:32px;
+      padding:0;
+      margin:0;
+      border:0;
+      text-indent:5px;
+      font-size:12px;
+    }
+    button{
+      width:56px;
+      height:32px;
+      background:#ededed;
+      padding:0;
+      color:#333;
+      font-size:12px;
+
+    }
+  }
+  .shopping-cart{
+    width:140px;
+    height:32px;
+    margin:24px 0;
+    line-height:32px;
+    background:#f85e66;
+    .my-cart{
+      vertical-align:middle;
+      color:#fff;
+      .shopping_white{
+        width:40px;
+        height:40px;
+        margin-top:-8px;
+        margin-right:-5px;
+      }
+      .button_next{
+        width:15px;
+        height:15px;
+      }
+    }
+  }
+}
+
+#coll-sidebar{
+  font-family:'Microsoft YaHei';
+  float:left;
+  .menu{
+    h3{
+      font-size:16px;
+      color:#333;
+    }
+    .submenu{
+      padding-left:16px;
+      a{
+        display:block;
+        margin:20px 0;
+        font-size:14px;
+        &.active{
+          color:#e23235;
+          font-weight:bold;
+        }
+      }
+    }
+  }
+}
+.coll-main{
+  font-family:'Microsoft YaHei';
+  float:right;
+  width:1000px;
+  color:#666;
+  h3{
+    font-size:14px;
+    text-indent:30px;
+  }
+  .coll-filter{
+    height:100px;
+    border-top:1px solid #ededed;
+    border-bottom:1px solid #ededed;
+    padding:20px 0 10px;
+    margin:10px 0;
+    .coll-proshop{
+      float:left;
+      a{
+        padding:0 8px 5px;
+        margin-left:20px;
+        color:#333;
+        display:inline-block;
+
+        &.active{
+          color:#e23235;
+          border-bottom:2px solid #e23235;
+        }
+
+      }
+    }
+    .search{
+      float:right;
+      input{
+        height:22px;
+        width:125px;
+        border:1px solid #ddd;
+      }
+      button{
+        height:24px;
+      }
+    }
+    dl{
+      height:40px;
+      line-height:40px;
+      margin-left:30px;
+      clear:both;
+     &.sortfil{
+       border-bottom:1px solid #ededed;
+     }
+      dt{
+        float:left;
+        width:100px;
+        span{
+          color:#338fda;
+        }
+      }
+      dd{
+        float:left;
+        a{
+          color:#338fda;
+          padding:0 10px;
+          margin:0 10px;
+          display:inline-block;
+          height:23px;
+          line-height:23px;
+          &.active{
+            background:#338fda;
+            color:#fff;
+            border-radius:2px;
+          }
+        }
+        &.fr{
+          float:right;
+        }
+        &.sortfil-more a{
+          text-align:center;
+          border:1px solid #ddd;
+          color:#666;
+        }
+        &.sortfil-allselect{
+          display:none;
+          input{
+            vertical-align:-2px;
+          }
+          a{
+            color:#666;
+          }
+        }
+      }
+    }
+  }
+  .addpay{
+    height:40px;
+    line-height:40px;
+    margin:20px 5px;
+    li{
+      float:left;
+      margin:0 20px;
+      input{
+        vertical-align:-2px;
+      }
+    }
+  }
+  //tab页面
+  .coll-tabs{
+    display:none;
+  }
+  .coll-prolist{
+    display:block;
+    .prolist-con{
+      width:208px;
+      float:left;
+      height:270px;
+      padding:0 10px;
+      margin:10px ;
+      .prolist-pic{
+        width:100%;
+        text-align:center;
+        img{
+          width:130px;
+          height:130px;
+        }
+      }
+      .prolist-tit{
+        width:200px;
+        padding:10px 0px;
+        text-align:center;
+        overflow:hidden;
+        white-space:nowrap;
+        text-overflow:ellipsis;
+        input{
+          vertical-align:-2px;
+        }
+        a{
+          color:#328ed9;
+        }
+      }
+      .prolist-price{
+        color:#ff0003;
+        margin:10px 0;
+        font-weight:bold;;
+      }
+      .prolist-eva{
+        height:20px;
+        line-height:20px;
+        span{
+          color:#999;
+          &:last-child{
+            float:right;
+          }
+          svg{
+            width:15px;
+            height:15px;
+            vertical-align:-2px;
+          }
+        }
+      }
+      .prolist-btn{
+        margin:10px 0;
+        border:1px solid #ededed;
+        height:30px;
+        line-height:30px;
+        a{
+          display:inline-block;
+          width:102px;
+          text-align:center;
+
+          &.addcart{
+            background:#f6f6f6;
+            border-right:1px solid #ededed;
+          }
+          &.attention{
+            background:#f6f6f6;
+            float:right;
+          }
+        }
+      }
+    }
+  }
+  .coll-shoplist{
+
+    .coll-shopcon{
+      overflow:hidden;
+      border:1px solid #ddd;
+      margin:0 0 30px 20px;
+      .shop-head{
+        width:244px;
+        height:210px;
+        text-align:center;
+        border-right:1px solid #ddd;
+        float:left;
+        position:relative;
+        overflow:hidden;
+        a{
+          display:inline-block;
+
+          svg{
+            vertical-align:-3px;
+          }
+        }
+        .top{
+          opacity:0;
+          overflow:hidden;
+          a{
+            width:120px;
+            height:27px;
+            background:rgba(0,0,0,0.3);
+            line-height:27px;
+            color:#fff;
+            float:left;
+            &:last-child{
+              float:right;
+            }
+          }
+        }
+        &:hover{
+          .top{
+            opacity:1;
+          }
+        }
+        img{
+          margin:10px;
+        }
+        .shop-title{
+          margin-bottom:40px;
+          strong{
+            font-size:14px;
+          }
+        }
+        .attention{
+          color:#9a9a98;
+          position:absolute;
+          bottom:50px;
+          left:100px;
+        }
+        .bottom{
+          margin-top:10px;
+          height:40px;
+          line-height:40px;
+          background:#f5f5f5;
+          border-top:1px solid #ddd;
+          position:absolute;
+          bottom:0;
+          a{
+            width:119px;
+            i{
+              display:inline-block;
+              width:18px;
+              height:18px;
+              vertical-align:-2px;
+            }
+            &.h-shop{
+              border-right:1px solid #ddd;
+              i{
+                background:url("/font-icon/collection/collection_shop.svg") no-repeat;
+              }
+              &:hover{
+                i{
+                  background:url("/font-icon/collection/collection_shop_blue.svg") no-repeat;
+                }
+              }
+            }
+            &.h-talk{
+              i{
+                background:url("/font-icon/collection/collection_talk.svg") no-repeat;
+              }
+              &:hover{
+                i{
+                  background:url("/font-icon/collection/collection_talk_blue.svg") no-repeat;
+                }
+
+              }
+            }
+          }
+
+        }
+
+      }
+      .shop-main{
+        width:720px;
+        float:right;
+        .shop-main-prolist{
+
+          text-align:center;
+          width:640px;
+          overflow:hidden;
+          float:left;
+          margin-top:30px;
+          li{
+            float:left;
+            width:210px;
+            img{
+              width:122px;
+              height:122px;
+            }
+            p{
+              margin-top:10px;
+            }
+          }
+        }
+        .lastpic{
+          float:left;
+          margin-left:10px;
+          width:21px;
+          height:46px;
+          background:rgba(196,196,196,0.2);
+          display:inline-block;
+          line-height:46px;
+          text-align:center;
+          font-size:20px;
+          margin-top:70px;
+        }
+        .nextpic{
+          float:right;
+          width:21px;
+          height:46px;
+          background:rgba(196,196,196,0.2);
+          display:inline-block;
+          line-height:46px;
+          text-align:center;
+          font-size:20px;
+          margin:70px 20px 0 0;
+        }
+        .btn{
+          clear:both;
+          width:40px;
+          margin:0 auto;
+          a{
+            display:inline-block;
+            width:10px;
+            height:10px;
+            background:#d1d1d1;
+            border-radius:5px;
+            margin:15px 2px 0;
+            &.active{
+              background:#666;
+            }
+          }
+        }
+        .nothing{
+          width:100%;
+          text-align:center;
+          margin:55px 0;
+          font-size:16px;
+          font-weight:bold;
+        }
+        .ticket{
+          width:100%;
+          overflow:hidden;
+          li{
+            width:160px;
+            height:76px;
+            margin:0 2px;
+            float:left;
+            strong{
+              font-size:20px;
+              color:#fff;
+              float:left;
+              margin:8px 0 0 10px;
+            }
+            a{
+              display:inline-block;
+              width:66px;
+              height:20px;
+              text-align:center;
+              line-height:20px;
+              border:1px solid #fff;
+              border-radius:10px;
+              color:#fff;
+              margin:10px;
+              float:right;
+            }
+            p{
+              clear:both;
+              text-align:left;
+              margin:10px 0 0 10px;
+              color:#fff;
+            }
+            span{
+              margin:10px;
+            }
+          }
+          .ticket1{
+            background:url("/images/cart/bg01.png") no-repeat;
+          }
+          .ticket2{
+            background:url("/images/cart/bg02.png") no-repeat;
+          }
+          .ticket3{
+            background:url("/images/cart/bg03.png") no-repeat;
+          }
+          .ticket4{
+            background:url("/images/cart/bg04.png") no-repeat;
+          }
+        }
+        .profil{
+          overflow:hidden;
+
+          margin:8px;
+          li{
+            float:left;
+            width:50px;
+            height:32px;
+            text-align:center;
+            line-height:30px;
+            border:1px solid #ddd;
+            border-left:none;
+            &:first-child{
+              border-left:1px solid #ddd;
+            }
+            &.active{
+              border:1px solid #ec1e1e;
+              a{
+                color:#ec1e1e;
+              }
+            }
+            a{
+              display:inline-block;
+              width:100%;
+              height:30px;
+
+            }
+
+          }
+        }
+      }
+
+    }
+
+  }
+  //空页面
+  .coll-null{
+    font-family:"Microsoft YaHei";
+    clear:both;
+    margin:10% 40%;
+    color:#686868;
+    font-size:18px;
+    font-weight:bold;
+    a{
+      color:#e13332;
+      font-size:12px;
+      margin-left:80px;
+    }
+  }
+}
+.coll-page{
+  height:25px;
+  line-height:25px;
+  float:right;
+  margin:20px 0 50px;
+  button{
+    float:left;
+    height:27px;
+    line-height:21px;
+    margin:0 10px;
+    i{
+      display:inline-block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      vertical-align:-2px;
+    }
+    &.lastpage{
+      i{
+        border-width: 6px 10px 6px 0;
+        border-color: transparent #656565 transparent transparent;
+      }
+    }
+    &.nextpage{
+      i{
+        border-width:  6px 0 6px 10px;;
+        border-color: transparent  transparent transparent #656565;
+      }
+    }
+  }
+  p{
+    float:left;
+    margin:0 10px;
+  }
+  ul{
+    float:left;
+    li{
+      float:left;
+      a{
+        display:inline-block;
+        width:28px;
+        text-align:center;
+        border:1px solid #ddd;
+        margin:0 5px;
+        &.active{
+          color:#fff;
+          background:#3db1fa;
+        }
+      }
+    }
+  }
+  .jump-page{
+    float:left;
+    margin-left:5px;
+    input{
+      height:25px;
+      line-height:25px;
+      border:1px solid #ddd;
+      vertical-align:-2px;
+    }
+  }
+}
