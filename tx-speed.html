@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>腾讯云网络价格方案计算</title>
+</head>
+<script>
+    let cons = [
+        {
+            speed:[1,2],
+            money:20
+        },
+        {
+            speed:[3,6],
+            money:25
+        },
+        {
+            speed:[6,200],
+            money:90
+        }
+    ];
+    let preTotalMoney = 0;
+    let speedTypes = ['m','g','tb','pb','eb','zb','yb','nb'];
+    let fan1 = function(total,maxSpeed,speedType){
+        total = total*(Math.pow(1024,speedTypes.indexOf(speedType)))
+        let useMaxTotal = 60 * 60 * 24 * 30 * maxSpeed;
+        for(let i in cons){
+            let obj = cons[i];
+            if(maxSpeed >= obj.speed[0] && maxSpeed <= obj.speed[1] ){
+                if(useMaxTotal>=total){//能使用的最大流量满足所需要
+                    for(let s =0;s<i;s++){
+                        preTotalMoney += (cons[s].money*(cons[s].speed[1]-cons[s].speed[0]+1));
+                    }
+                    preTotalMoney += (obj.money * ((maxSpeed-obj.speed[0])+(i==0?1:0)))
+                    break;
+                }
+            }
+        }
+        return preTotalMoney;
+    }
+
+    let fan2 = function(total,maxSpeed){
+        return (Math.floor(total/1024)+1)*0.8
+    }
+
+    function speedChange() {
+        var speedEl = document.getElementById('speed');
+        if (speedEl.value != '') {
+            if (/\d+/.test(speedEl.value)) {
+                if ((speedEl.value | 0) > 200) {
+                    speedEl.value = 200;
+                }
+            } else {
+                speedEl.value = 0;
+            }
+        }
+    }
+
+    function compaire() {
+        preTotalMoney = 0;
+        var speedEl = document.getElementById('speed');
+        var totalEl = document.getElementById('total');
+        var totalTypeEl = document.getElementById('totalType');
+        let tTotal = Number(totalEl.value);
+        let tSpeed = Number(speedEl.value);
+        let fan1Result = fan1(tTotal,tSpeed,totalTypeEl.value);
+        let fan2Result = fan2(tTotal,tSpeed,totalTypeEl.value);
+        let sf1 = document.getElementById('spanFan1');
+        sf1.innerHTML = fan1Result==0?'无法满足':fan1Result;
+        let sf2 = document.getElementById('spanFan2');
+        sf2.innerHTML = fan2Result==0?'无法满足':fan2Result;
+        if(fan1Result<fan2Result){
+            sf1.style='color:#9cf';
+            sf2.style='color:#000';
+        }else{
+            sf2.style='color:#9cf';
+            sf1.style='color:#000';
+        }
+
+    }
+</script>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        list-style: none;
+    }
+</style>
+<body style="padding:20px;">
+<div>
+    <label for="speed">速度</label> <input onchange="speedChange()" value="4" type="text" id="speed"> m
+</div>
+<div>
+    <label for="total">总量</label>
+    <input type="text" value="1024" id="total">
+    <select id="totalType">
+        <option value="m">M</option>
+        <option value="g">G</option>
+        <option value="tb">TB</option>
+        <option value="pb">PB</option>
+        <option value="eb">EB</option>
+        <option value="yb">YB</option>
+        <option value="zb">ZB</option>
+        <option value="nb">NB</option>
+    </select>
+</div>
+<div>
+    <input style="width:300px;" type="button" onclick="compaire()" value="计算">
+</div>
+<div>
+    <li>包月:<span id="spanFan1"></span></li>
+    <li>按量:<span id="spanFan2"></span></li>
+</div>
+</body>
+</html>
