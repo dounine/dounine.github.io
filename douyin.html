@@ -1,0 +1,21 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>抖音充值</title>
+</head>
+<body>
+<div style="text-align: center;font-size: 40px;color:#3e3e3e;margin-top:20px;">
+    跳转中...
+</div>
+<script>
+   let currentUrl = window.location.href;
+   
+        let ccode ='wx';
+        let platform ='douyin';
+        let appid = 'wx7b168b095eb4090e';
+        let encodeUrl = encodeURIComponent(`https://douyin.61week.com/?ccode=${ccode}&platform=${platform}&appid=${appid}`);
+        window.location.href = `https://open.weixin.qq.com/connect/oauth2/authorize?appid=${appid}&redirect_uri=${encodeUrl}&response_type=code&scope=snsapi_base&state=${appid}#wechat_redirect`;
+   
+</script>
+</body>
+</html>
