@@ -42,7 +42,90 @@
         border-radius: 20px;
         font-weight: bold;
         box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }<html>
+    }<html><html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>抖音充值/快手充值</title>
+</head>
+<body>
+<div class="content">
+    <div class="box">
+        <div class="item button" onclick="openLive('douyin')">
+            <div>抖音充值</div>
+        </div>
+        <div class="item button button2" onclick="openLive('kuaishou')">
+            <div>快手充值</div>
+        </div>
+    </div>
+</div>
+<footer class="footer">
+    右上角三个点、收藏当前永久充值页面
+</footer>
+</body>
+<script>
+    function openLive(platform) {
+        let ccode = 'wx';
+        let appid = 'wx7b168b095eb4090e';
+        let encodeUrl = encodeURIComponent(`https://douyin.61week.com/?ccode=${ccode}&platform=${platform}&appid=${appid}`);
+        window.location.href = `https://open.weixin.qq.com/connect/oauth2/authorize?appid=${appid}&redirect_uri=${encodeUrl}&response_type=code&scope=snsapi_base&state=${appid}#wechat_redirect`;
+    }
+
+</script>
+<style>
+    body {
+        background-image: linear-gradient(to top, #fad0c4 0%, #fad0c4 1%, #ffd1ff 100%);
+    }
+
+    .button {
+        background-color: #555555; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        border-radius: 20px;
+        font-weight: bold;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .button2 {
+        background-color: #DC663B;
+    }
+
+    /* 绿色 */
+
+    .content {
+        min-height: calc(100vh - 200px);
+        font-size: 40px;
+    }
+
+    .content .box {
+        display: flex;
+        flex-direction: column;
+        padding-top: calc(40vh);
+    }
+
+    .content .box .item {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        height: 100px;
+        line-height: 100px;
+        margin-top: 30px;
+    }
+
+    .footer {
+        height: 200px;
+        line-height: 200px;
+        text-align: center;
+        font-size: 40px;
+        font-weight: bold;
+        color: #808080;
+    }
+</style>
+</html>
+
 <head>
     <meta charset="UTF-8"/>
     <title>抖音充值/快手充值</title>
